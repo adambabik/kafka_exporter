@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  kafka-exporter:
+  - apiVersion: v2
+    appVersion: v0.1.5
+    created: "2020-11-24T15:17:50.95865+01:00"
+    description: Kafka high-level Prometheus metrics exporter.
+    digest: 1f8a55e0dda9d4fe85ed244e6c38ffd99cb8699413a2be7b6612dd91e8735d5c
+    name: kafka-exporter
+    type: application
+    urls:
+    - https://adambabik.github.com/kafka_exporter/kafka-exporter-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-11-24T15:17:50.958042+01:00"
