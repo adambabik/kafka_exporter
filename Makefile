@@ -16,3 +16,7 @@ test-integration:
 .PHONY: test-unit
 test-unit:
 	go test -race .
+
+.PHONY: test-unit-coverage
+test-unit-coverage:
+	go test -coverprofile=coverage.out .
