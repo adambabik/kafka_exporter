@@ -38,6 +38,9 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: coverage
+      - name: Branch name
+        id: vars
+        run: echo ::set-output name=short_ref::${GITHUB_REF#refs/*/}
       - run: |
           curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
           chmod +x ./cc-test-reporter
@@ -46,3 +49,5 @@ jobs:
           ./cc-test-reporter after-build -t gocov -p $(go list -m)
         env:
           CC_TEST_REPORTER_ID: cc74476efc023d0fefde2e75a4ca103f20a9d5e9b3e04a46c8aca3a5d356c6fd
+          GIT_COMMIT_SHA: ${{ github.sha }}
+          GIT_BRANCH: ${{ steps.vars.outputs.short_ref }}
